@@ -1,6 +1,8 @@
-﻿using shulzhenko;
+﻿using rybalka;
+using shulzhenko;
 using System;
 using sobko;
+
 
 
 
@@ -110,6 +112,7 @@ class Program
                 case "2":
                     break;
                 case "3":
+                    array = Task14.Run(array);
                     break;
                 case "4":
                     break;
