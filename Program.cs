@@ -83,5 +83,43 @@ class Program
         }
         return array;
     }
+    static void ChooseTask(int[] array)
+    {
+        while (true)
+        {
+            Console.WriteLine("\n====================================");
+            Console.WriteLine("       ВИБІР ЗАВДАННЯ          ");
+            Console.WriteLine("====================================");
+            Console.WriteLine("1 - Шульженко Софія: Вставити перед кожним парним елементом 1");
+            Console.WriteLine("2 - Мукогоренко Максим: Знищити всі елементи з парними індексами");
+            Console.WriteLine("3 - Рибалка Владислав: Вставити після кожного від’ємного елемента його модуль");
+            Console.WriteLine("4 - Чуб Роман: Якщо максимум парний V, замінити на два V/2; якщо непарний, не змінювати");
+            Console.WriteLine("5 - Собко Владислав: Вставити в початок мінімум, а в кінець максимум");
+            Console.WriteLine("0 - Повернутися до головного меню");
+            Console.Write("Ваш вибір: ");
 
+            string choice = Console.ReadLine();
+            Console.WriteLine("====================================");
+            switch (choice)
+            {
+                case "1":
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    break;
+                case "4":
+                    break;
+                case "5":
+                    break;
+                case "0":
+                    return;
+                default:
+                    Console.WriteLine("Рагуль шо ти вибираєш  , спробуй ще раз.");
+                    continue;
+            }
+            Console.WriteLine("Масив після змін: " + string.Join(" ", array));
+            Console.WriteLine("====================================");
+        }
+    }
 }
