@@ -1,5 +1,6 @@
 ﻿using shulzhenko;
 using System;
+using sobko;
 
 
 
@@ -22,12 +23,12 @@ class Program
 
             if (choice == "1")
             {
-               int[] array = GetArrayFromUser();
-               ChooseTask(array);
+                int[] array = GetArrayFromUser();
+                ChooseTask(array);
             }
             else
             {
-               Console.WriteLine("Невірний вибір, спробуйте ще раз.");
+                Console.WriteLine("Невірний вибір, спробуйте ще раз.");
             }
         }
     }
@@ -113,6 +114,7 @@ class Program
                 case "4":
                     break;
                 case "5":
+                    Task11.Run(ref array);
                     break;
                 case "0":
                     return;
