@@ -1,4 +1,5 @@
-﻿using System;
+﻿using shulzhenko;
+using System;
 
 
 
@@ -103,6 +104,7 @@ class Program
             switch (choice)
             {
                 case "1":
+                    array = Task16.Run(array);
                     break;
                 case "2":
                     break;
