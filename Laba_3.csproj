@@ -7,12 +7,5 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Rybalka.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Rybalka.cs" />
-  </ItemGroup>
 
 </Project>
