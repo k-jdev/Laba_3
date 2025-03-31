@@ -15,7 +15,7 @@ class Program
         {
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
-            Console.Clear();
+            
             Console.WriteLine("====================================");
             Console.WriteLine("           ГОЛОВНЕ МЕНЮ           ");
             Console.WriteLine("====================================");
@@ -34,7 +34,13 @@ class Program
             else
             {
                 Console.WriteLine("Некоректний вибір, спробуйте ще раз.");
+                Console.WriteLine("Через 4 секунди відбудеться оновлення консолі.");
             }
+          
+          
+            Thread.Sleep(4000);
+            Console.Clear();
+
         }
     }
 
@@ -47,6 +53,7 @@ class Program
         Console.WriteLine("1 - В один рядок через пробіл");
         Console.WriteLine("2 - Ввести довжину, а потім заповнити числами");
         Console.WriteLine("3 - Ввести довжину і заповнити рандомом");
+        Console.WriteLine("0 - Повернутися у головне меню ");
         Console.Write("Ваш вибір: ");
 
         string choice = Console.ReadLine();
@@ -83,6 +90,10 @@ class Program
                 }
                 Console.WriteLine("Згенерований масив: " + string.Join(" ", array));
                 break;
+            case "0":
+                Main();
+                Console.WriteLine();
+                break;
 
             default:
                 Console.WriteLine("Помилка!");
@@ -95,7 +106,7 @@ class Program
 
         while (true)
         {
-            // Console.Clear();
+            
             Console.WriteLine("====================================");
             Console.WriteLine("       ВИБІР ЗАВДАННЯ          ");
             Console.WriteLine("====================================");
@@ -130,12 +141,16 @@ class Program
                     return;
                 default:
                     Console.WriteLine("Здається було введене неправильне значення, спробуте ще раз.");
+                    Console.WriteLine("Через 4 секунди відбудеться оновлення консолі.");
+                    Thread.Sleep(4000);
+                    Console.Clear();
                     continue;
             }
             Console.WriteLine("Масив після змін: " + string.Join(" ", array));
             Console.WriteLine("====================================");
             Console.WriteLine("Натисніть Enter, щоб продовжити...");
             Console.ReadLine();
+            Console.Clear();
         }
     }
 }
