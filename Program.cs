@@ -175,5 +175,17 @@ class Program
         }
     }
 
-    
+    static void PrintArray()
+    {
+        if (array.Length == 0)
+        {
+            Console.WriteLine("Масив ще не створено.");
+        }
+        else
+        {
+            Console.WriteLine($"Поточний масив: {string.Join(" ", array)}");
+        }
+        Console.WriteLine("Натисніть будь-яку клавішу, щоб повернутися...");
+        Console.ReadKey();
+    }
 }
