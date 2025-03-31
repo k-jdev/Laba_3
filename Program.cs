@@ -2,7 +2,7 @@
 using shulzhenko;
 using System;
 using sobko;
-
+using chub;
 
 
 
@@ -115,6 +115,8 @@ class Program
                     array = Task14.Run(array);
                     break;
                 case "4":
+                    array = Task13_sigmaAlfa228.Run(array);
+
                     break;
                 case "5":
                     Task11.Run(ref array);
