@@ -179,7 +179,6 @@ class Program
                 default:
                     Console.WriteLine("""
                         Некоректний вибір, спробуйте ще раз.
-                        
                         Натисніть будь-яку клавішу.
                         """);
                     Console.ReadKey();
