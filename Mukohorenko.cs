@@ -6,10 +6,10 @@ namespace mukohorenko
     {
         public static int[] Run(int[] arr)
         {
-            RemoveEvenIndices(arr);
+            RemoveEvenIndices(ref arr);
             return arr;
         }
-        static int[] RemoveEvenIndices(int[] arr)
+        static void RemoveEvenIndices(ref int[] arr)
         {
             int newSize = arr.Length / 2;
             int[] newArr = new int[newSize];
@@ -17,8 +17,7 @@ namespace mukohorenko
             {
                 newArr[j++] = arr[i];
             }
-            return newArr;
+            arr = newArr;
         }
     }
 }
-
