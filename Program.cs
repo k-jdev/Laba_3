@@ -6,43 +6,49 @@ using chub;
 using mukohorenko;
 using System.Text;
 
-
-
 class Program
 {
+    static int[] array = new int[0];
+
     static void Main()
     {
+        Console.OutputEncoding = Encoding.UTF8;
+        Console.InputEncoding = Encoding.UTF8;
+
         while (true)
         {
-            Console.OutputEncoding = Encoding.UTF8;
-            Console.InputEncoding = Encoding.UTF8;
-            Console.WriteLine
-             ("""
+            Console.Clear();
+            Console.WriteLine("""
               ====================================
                          ГОЛОВНЕ МЕНЮ           
               ====================================
-              1 - Почати виконувати програму
-              2 - Завершити програму
+              1 - Створити масив (випадково або вручну)
+              2 - Виконати завдання студентів
+              3 - Вивести поточний стан масиву
+              4 - Завершити програму
               Ваш вибір: 
               """);
 
             string choice = Console.ReadLine();
-            if (choice == "2") break;
-
-            if (choice == "1")
+            switch (choice)
             {
-                int[] array = GetArrayFromUser();
-                ChooseTask(array);
+                case "1":
+                    array = GetArrayFromUser();
+                    PrintArray();
+                    break;
+                case "2":
+                    ChooseTask();
+                    break;
+                case "3":
+                    PrintArray();
+                    break;
+                case "4":
+                    return;
+                default:
+                    Console.WriteLine("Некоректний вибір, спробуйте ще раз.");
+                    Console.ReadKey();
+                    break;
             }
-            else
-            {
-                Console.WriteLine("Некоректний вибір, спробуйте ще раз.");
-                Console.WriteLine("Натисніть будь-яку клавішу, щоб продовжити...");
-            }
-
-            Console.ReadKey();
-            Console.Clear();
-
         }
     }
 
@@ -61,56 +67,62 @@ class Program
         Console.Write("Ваш вибір: ");
 
         string choice = Console.ReadLine();
-        int[] array = new int[0];
+        int[] newArray = new int[0];
 
         switch (choice)
         {
             case "1":
                 Console.Write("Введіть масив через пробіл: ");
                 string[] input = Console.ReadLine().Split();
-                array = Array.ConvertAll(input, int.Parse);
+                newArray = Array.ConvertAll(input, int.Parse);
                 break;
 
             case "2":
                 Console.Write("Введіть довжину масиву: ");
                 int length = int.Parse(Console.ReadLine());
-                array = new int[length];
+                newArray = new int[length];
                 Console.WriteLine("Введіть числа:");
                 for (int i = 0; i < length; i++)
                 {
                     Console.Write($"Елемент {i + 1}: ");
-                    array[i] = int.Parse(Console.ReadLine());
+                    newArray[i] = int.Parse(Console.ReadLine());
                 }
                 break;
 
             case "3":
                 Console.Write("Введіть довжину масиву: ");
                 int size = int.Parse(Console.ReadLine());
-                array = new int[size];
+                newArray = new int[size];
                 Random rand = new Random();
                 for (int i = 0; i < size; i++)
                 {
-                    array[i] = rand.Next(-100, 101);
+                    newArray[i] = rand.Next(-100, 101);
                 }
-                Console.WriteLine("Згенерований масив: " + string.Join(" ", array));
                 break;
+
             case "0":
-                Main();
-                Console.WriteLine();
-                break;
+                return array;
 
             default:
                 Console.WriteLine("Помилка!");
                 return GetArrayFromUser();
         }
-        return array;
+
+        return newArray;
     }
-    static void ChooseTask(int[] array)
+
+    static void ChooseTask()
     {
+        if (array.Length == 0)
+        {
+            Console.WriteLine("Масив ще не створено! Спочатку створіть масив.");
+            Console.ReadKey();
+            return;
+        }
 
         while (true)
         {
-
+            Console.Clear();
             Console.WriteLine("""
                 ====================================
                        ВИБІР ЗАВДАННЯ          
@@ -120,13 +132,15 @@ class Program
                 3 - Рибалка Владислав: Вставити після кожного від’ємного елемента його модуль
                 4 - Чуб Роман: Якщо максимум парний V, замінити на два V/2; якщо непарний, не змінювати
                 5 - Собко Владислав: Вставити в початок мінімум, а в кінець максимум
+                6 - Створити новий масив перед виконанням іншого варіанту
                 0 - Повернутися до головного меню
                 """);
 
             Console.Write("Ваш вибір: ");
-
             string choice = Console.ReadLine();
             Console.WriteLine("====================================");
+            Console.WriteLine($"Масив до змін: {string.Join(" ", array)}");
+
             switch (choice)
             {
                 case "1":
@@ -140,27 +154,26 @@ class Program
                     break;
                 case "4":
                     array = Task13_sigmaAlfa228.Run(array);
-                    if(array == null) return;
                     break;
                 case "5":
                     Task11.Run(ref array);
                     break;
+                case "6":
+                    array = GetArrayFromUser();
+                    break;
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("Здається було введене неправильне значення, спробуте ще раз.");                   
-                    Console.WriteLine("Натисніть будь-яку клавішу, щоб продовжити...");
+                    Console.WriteLine("Неправильний вибір, спробуйте ще раз.");
                     Console.ReadKey();
-                    Console.Clear();
                     continue;
             }
-            Console.WriteLine($"""
-            Масив після змін: " + {string.Join(" ", array)}
-            ====================================
-            Натисніть Enter, щоб продовжити...
-            """);
+
+            Console.WriteLine($"Масив після змін: {string.Join(" ", array)}");
+            Console.WriteLine("Натисніть Enter, щоб продовжити...");
             Console.ReadLine();
-            Console.Clear();
         }
     }
+
+    
 }
