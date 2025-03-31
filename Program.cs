@@ -3,6 +3,7 @@ using shulzhenko;
 using System;
 using sobko;
 using chub;
+using mukohorenko;
 using System.Text;
 
 
@@ -126,6 +127,7 @@ class Program
                     array = Task16.Run(array);
                     break;
                 case "2":
+                    array = Task6.Run(array);
                     break;
                 case "3":
                     array = Task14.Run(array);
