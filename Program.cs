@@ -35,11 +35,10 @@ class Program
             else
             {
                 Console.WriteLine("Некоректний вибір, спробуйте ще раз.");
-                Console.WriteLine("Через 4 секунди відбудеться оновлення консолі.");
+                Console.WriteLine("Натисніть будь-яку клавішу, щоб продовжити...");
             }
-          
-          
-            Thread.Sleep(4000);
+
+            Console.ReadKey();
             Console.Clear();
 
         }
@@ -87,7 +86,7 @@ class Program
                 Random rand = new Random();
                 for (int i = 0; i < size; i++)
                 {
-                    array[i] = rand.Next(1, 101);
+                    array[i] = rand.Next(-100, 101);
                 }
                 Console.WriteLine("Згенерований масив: " + string.Join(" ", array));
                 break;
@@ -134,7 +133,7 @@ class Program
                     break;
                 case "4":
                     array = Task13_sigmaAlfa228.Run(array);
-
+                    if(array == null) return;
                     break;
                 case "5":
                     Task11.Run(ref array);
@@ -143,8 +142,10 @@ class Program
                     return;
                 default:
                     Console.WriteLine("Здається було введене неправильне значення, спробуте ще раз.");
-                    Console.WriteLine("Через 4 секунди відбудеться оновлення консолі.");
-                    Thread.Sleep(4000);
+                    //Console.WriteLine("Через 4 секунди відбудеться оновлення консолі.");
+                    //Thread.Sleep(4000);
+                    Console.WriteLine("Натисніть будь-яку клавішу, щоб продовжити...");
+                    Console.ReadKey();
                     Console.Clear();
                     continue;
             }
