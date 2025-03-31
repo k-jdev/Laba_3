@@ -3,6 +3,7 @@ using shulzhenko;
 using System;
 using sobko;
 using chub;
+using System.Text;
 
 
 
@@ -12,6 +13,8 @@ class Program
     {
         while (true)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding = Encoding.UTF8;
             Console.Clear();
             Console.WriteLine("====================================");
             Console.WriteLine("           ГОЛОВНЕ МЕНЮ           ");
@@ -30,7 +33,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("Невірний вибір, спробуйте ще раз.");
+                Console.WriteLine("Некоректний вибір, спробуйте ще раз.");
             }
         }
     }
@@ -82,16 +85,18 @@ class Program
                 break;
 
             default:
-                Console.WriteLine("Невірний вибір!");
+                Console.WriteLine("Помилка!");
                 return GetArrayFromUser();
         }
         return array;
     }
     static void ChooseTask(int[] array)
     {
+        
         while (true)
         {
-            Console.WriteLine("\n====================================");
+            Console.Clear();
+            Console.WriteLine("====================================");
             Console.WriteLine("       ВИБІР ЗАВДАННЯ          ");
             Console.WriteLine("====================================");
             Console.WriteLine("1 - Шульженко Софія: Вставити перед кожним парним елементом 1");
@@ -124,7 +129,7 @@ class Program
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("Рагуль шо ти вибираєш  , спробуй ще раз.");
+                    Console.WriteLine("Здається було введене неправильне значення, спробуте ще раз.");
                     continue;
             }
             Console.WriteLine("Масив після змін: " + string.Join(" ", array));
