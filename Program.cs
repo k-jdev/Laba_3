@@ -49,13 +49,15 @@ class Program
     static int[] GetArrayFromUser()
     {
         Console.Clear();
-        Console.WriteLine("====================================");
-        Console.WriteLine("       ВВЕДЕННЯ МАСИВУ          ");
-        Console.WriteLine("====================================");
-        Console.WriteLine("1 - В один рядок через пробіл");
-        Console.WriteLine("2 - Ввести довжину, а потім заповнити числами");
-        Console.WriteLine("3 - Ввести довжину і заповнити рандомом");
-        Console.WriteLine("0 - Повернутися у головне меню ");
+        Console.WriteLine("""
+        ====================================
+               ВВЕДЕННЯ МАСИВУ          
+        ====================================
+        1 - В один рядок через пробіл
+        2 - Ввести довжину, а потім заповнити числами
+        3 - Ввести довжину і заповнити рандомом
+        0 - Повернутися у головне меню        
+        """");
         Console.Write("Ваш вибір: ");
 
         string choice = Console.ReadLine();
@@ -146,17 +148,17 @@ class Program
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("Здається було введене неправильне значення, спробуте ще раз.");
-                    //Console.WriteLine("Через 4 секунди відбудеться оновлення консолі.");
-                    //Thread.Sleep(4000);
+                    Console.WriteLine("Здається було введене неправильне значення, спробуте ще раз.");                   
                     Console.WriteLine("Натисніть будь-яку клавішу, щоб продовжити...");
                     Console.ReadKey();
                     Console.Clear();
                     continue;
             }
-            Console.WriteLine("Масив після змін: " + string.Join(" ", array));
-            Console.WriteLine("====================================");
-            Console.WriteLine("Натисніть Enter, щоб продовжити...");
+            Console.WriteLine($"""
+            Масив після змін: " + {string.Join(" ", array)}
+            ====================================
+            Натисніть Enter, щоб продовжити...
+            """);
             Console.ReadLine();
             Console.Clear();
         }
