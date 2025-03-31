@@ -16,13 +16,15 @@ class Program
         {
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
-            
-            Console.WriteLine("====================================");
-            Console.WriteLine("           ГОЛОВНЕ МЕНЮ           ");
-            Console.WriteLine("====================================");
-            Console.WriteLine("1 - Почати виконувати програму");
-            Console.WriteLine("2 - Завершити програму");
-            Console.Write("Ваш вибір: ");
+            Console.WriteLine
+             ("""
+              ====================================
+                         ГОЛОВНЕ МЕНЮ           
+              ====================================
+              1 - Почати виконувати програму
+              2 - Завершити програму
+              Ваш вибір: 
+              """);
 
             string choice = Console.ReadLine();
             if (choice == "2") break;
