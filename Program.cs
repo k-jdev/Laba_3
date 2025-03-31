@@ -14,10 +14,12 @@ class Program
     {
         Console.OutputEncoding = Encoding.UTF8;
         Console.InputEncoding = Encoding.UTF8;
+        
 
         while (true)
         {
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("""
               ====================================
                          ГОЛОВНЕ МЕНЮ           
@@ -59,6 +61,7 @@ class Program
     static int[] GetArrayFromUser()
     {
         Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("""
         ====================================
                ВВЕДЕННЯ МАСИВУ          
@@ -132,6 +135,7 @@ class Program
         while (true)
         {
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("""
                 ====================================
                        ВИБІР ЗАВДАННЯ          
