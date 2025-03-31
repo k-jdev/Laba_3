@@ -26,8 +26,8 @@ class Program
               2 - Виконати завдання студентів
               3 - Вивести поточний стан масиву
               4 - Завершити програму
-              Ваш вибір: 
               """);
+            Console.Write("Ваш вибір: ");
 
             string choice = Console.ReadLine();
             switch (choice)
@@ -45,7 +45,11 @@ class Program
                 case "4":
                     return;
                 default:
-                    Console.WriteLine("Некоректний вибір, спробуйте ще раз.");
+                    Console.WriteLine("""
+                        Некоректний вибір, спробуйте ще раз.
+                        
+                        Натисніть будь-яку клавішу.
+                        """);
                     Console.ReadKey();
                     break;
             }
@@ -104,7 +108,12 @@ class Program
                 return array;
 
             default:
-                Console.WriteLine("Помилка!");
+                Console.WriteLine("""
+                    Помилка!
+
+                    Натисніть будь-яку клавішу.
+                    """);
+                Console.ReadKey();
                 return GetArrayFromUser();
         }
 
@@ -164,7 +173,11 @@ class Program
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("Неправильний вибір, спробуйте ще раз.");
+                    Console.WriteLine("""
+                        Некоректний вибір, спробуйте ще раз.
+                        
+                        Натисніть будь-яку клавішу.
+                        """);
                     Console.ReadKey();
                     continue;
             }
