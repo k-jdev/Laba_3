@@ -92,10 +92,10 @@ class Program
     }
     static void ChooseTask(int[] array)
     {
-        
+
         while (true)
         {
-            Console.Clear();
+            // Console.Clear();
             Console.WriteLine("====================================");
             Console.WriteLine("       ВИБІР ЗАВДАННЯ          ");
             Console.WriteLine("====================================");
@@ -134,6 +134,8 @@ class Program
             }
             Console.WriteLine("Масив після змін: " + string.Join(" ", array));
             Console.WriteLine("====================================");
+            Console.WriteLine("Натисніть Enter, щоб продовжити...");
+            Console.ReadLine();
         }
     }
 }
