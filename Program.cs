@@ -167,6 +167,7 @@ class Program
                     break;
                 case 4:
                     array = Task13_sigmaAlfa228.Run(array);
+
                     break;
                 case 5:
                     Task11.Run(ref array);

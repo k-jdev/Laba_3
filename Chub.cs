@@ -20,7 +20,7 @@ namespace chub
             if (max % 2 != 0)
             {
                 Console.WriteLine("Максимальне число непарне!");
-                return null;
+                return array;
             }
 
             int add = 0;
