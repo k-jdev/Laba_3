@@ -19,7 +19,7 @@ class Program
         while (true)
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("""
               ====================================
                          ГОЛОВНЕ МЕНЮ           
