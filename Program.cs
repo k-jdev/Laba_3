@@ -30,7 +30,7 @@ class Program
               4 - Завершити програму
               """);
             Console.Write("Ваш вибір: ");
-            Console.WriteLine("Hello world");
+            //Console.WriteLine("Hello world");
             int choice = int.Parse(Console.ReadLine());
             switch (choice)
             {
