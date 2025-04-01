@@ -31,20 +31,20 @@ class Program
               """);
             Console.Write("Ваш вибір: ");
 
-            string choice = Console.ReadLine();
+            int choice = int.Parse(Console.ReadLine());
             switch (choice)
             {
-                case "1":
+                case 1:
                     array = GetArrayFromUser();
                     PrintArray();
                     break;
-                case "2":
+                case 2:
                     ChooseTask();
                     break;
-                case "3":
+                case 3:
                     PrintArray();
                     break;
-                case "4":
+                case 4:
                     return;
                 default:
                     Console.WriteLine("""
@@ -73,18 +73,18 @@ class Program
         """);
         Console.Write("Ваш вибір: ");
 
-        string choice = Console.ReadLine();
+        int choice = int.Parse(Console.ReadLine());
         int[] newArray = new int[0];
 
         switch (choice)
         {
-            case "1":
+            case 1:
                 Console.Write("Введіть масив через пробіл: ");
                 string[] input = Console.ReadLine().Split();
                 newArray = Array.ConvertAll(input, int.Parse);
                 break;
 
-            case "2":
+            case 2:
                 Console.Write("Введіть довжину масиву: ");
                 int length = int.Parse(Console.ReadLine());
                 newArray = new int[length];
@@ -96,7 +96,7 @@ class Program
                 }
                 break;
 
-            case "3":
+            case 3:
                 Console.Write("Введіть довжину масиву: ");
                 int size = int.Parse(Console.ReadLine());
                 newArray = new int[size];
@@ -107,7 +107,7 @@ class Program
                 }
                 break;
 
-            case "0":
+            case 0:
                 return array;
 
             default:
@@ -150,31 +150,31 @@ class Program
                 """);
 
             Console.Write("Ваш вибір: ");
-            string choice = Console.ReadLine();
+            int choice = int.Parse(Console.ReadLine());
             Console.WriteLine("====================================");
-            Console.WriteLine($"Масив до змін: {string.Join(" ", array)}");
+            if (choice >= 0 && choice <= 6) Console.WriteLine($"Масив до змін: {string.Join(" ", array)}");
 
             switch (choice)
             {
-                case "1":
+                case 1:
                     array = Task16.Run(array);
                     break;
-                case "2":
+                case 2:
                     array = Task6.Run(array);
                     break;
-                case "3":
+                case 3:
                     array = Task14.Run(array);
                     break;
-                case "4":
+                case 4:
                     array = Task13_sigmaAlfa228.Run(array);
                     break;
-                case "5":
+                case 5:
                     Task11.Run(ref array);
                     break;
-                case "6":
+                case 6:
                     array = GetArrayFromUser();
                     break;
-                case "0":
+                case 0:
                     return;
                 default:
                     Console.WriteLine("""
